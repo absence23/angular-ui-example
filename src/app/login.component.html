@@ -1,0 +1,23 @@
+<div [hidden]="!error" class="danger">
+    There was a problem logging in: "{{error}}". Please try again.
+</div>
+<br>
+<form (submit)="login()" role="form">
+    <mat-form-field appearance="fill">
+        <mat-label for="username">Username</mat-label>
+        <input matInput [(ngModel)]="credentials.username"
+                                                       class="form-control" id="username" name="username"
+                                                       type="text"/>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label for="password">Password</mat-label>
+        <input matInput [(ngModel)]="credentials.password"
+                                                       class="form-control" id="password" name="password"
+                                                       type="password"/>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
+
+<!--npm install -g @angular/cli@latest-->

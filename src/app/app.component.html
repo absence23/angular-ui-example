@@ -1,0 +1,19 @@
+<mat-grid-list cols="4" rowHeight="60px">
+    <mat-grid-tile colspan="1">
+        <a mat-button color="primary" [routerLink]="['/home']">Home</a>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1"><a mat-button color="primary" *ngIf="!authenticated()" [routerLink]="['/login']">Login</a>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="1">
+        <button mat-raised-button *ngIf="authenticated()" (click)="logout()">Logout</button>
+    </mat-grid-tile>
+</mat-grid-list>
+<div class="container">
+    <div class="nav-push"></div>
+    <router-outlet></router-outlet>
+    <div class="push"></div>
+</div>
+<footer>
+    <p>Copyright</p>
+</footer>
