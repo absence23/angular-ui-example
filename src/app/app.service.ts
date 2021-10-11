@@ -19,6 +19,7 @@ export class AppService {
     }
 
     /**
+     * [DOC]
      * Sends request to '/auth' with basic authentication.
      * Boolean result of authentication is written to the variable 'authenticated'
      * It's encodes string 'username:password' with Base64 and adds it to the headers
@@ -46,6 +47,7 @@ export class AppService {
     }
 
     /**
+     * [DOC]
      * Sends request to '/post' to get all posts.
      * Authentication is available with cookie that is saved in browser for this domain.
      * @param successCallback - method that is called on success
@@ -60,6 +62,7 @@ export class AppService {
     }
 
     /**
+     * [DOC]
      * Sends request to '/post' for adding the post.
      * Authentication is available with cookie that is saved in browser for this domain.
      * @param post - post object with following structure
@@ -80,6 +83,7 @@ export class AppService {
 
 
     /**
+     * [DOC]
      * Send HTTP request. 'withCredentials' allows to set JSESSIONID from response cookies
      * and to request cookies.
      * This code uses JS promises, you can find more info here

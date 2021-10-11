@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from "@angular/router";
 
 /**
+ * [DOC]
  * All application components should be imported here and added
  * to 'declarations' property in @NgModule. To be able to go
  * to one of this components  you should also add them to routes array
@@ -14,12 +15,14 @@ import {LoginComponent} from './login.component';
 import {AppComponent} from './app.component';
 
 /**
- * Services contain all logic for example http requests sending
+ * [DOC]
+ * Services contain some logic for example http requests sending
  * They should be added to property 'providers' in @NgModule
  */
 import {AppService} from './app.service';
 
 /**
+ * [DOC]
  * Following modules are from Angular Material UI
  * You can find all the available components on the official website
  * https://material.angular.io/
@@ -32,6 +35,7 @@ import {MatInputModule} from '@angular/material/input';
 
 
 /**
+ * [DOC]
  * This array contains urls and corresponding controllers
  * that will be loaded when user redirected to specified url
  * code example:

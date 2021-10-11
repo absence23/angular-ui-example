@@ -1,8 +1,20 @@
+<!-- [DOC]
+    Attribute 'routerLink' is used for navigation between components,
+    you can map all components to urls using 'Routes' array in app.module.ts.
+    The corresponding component will be showed in tag 'router-outlet'.
+
+    Directive *ngIf used for displaying tag conditionally. You can use variables and methods
+    to create conditional expression.
+
+    Expression '(click)="logout()"' is used to bind 'click' event to method 'logout()',
+    so when button is clicked 'logout()' method is called
+   -->
 <mat-grid-list cols="4" rowHeight="60px">
     <mat-grid-tile colspan="1">
         <a mat-button color="primary" [routerLink]="['/home']">Home</a>
     </mat-grid-tile>
-    <mat-grid-tile colspan="1"><a mat-button color="primary" *ngIf="!authenticated()" [routerLink]="['/login']">Login</a>
+    <mat-grid-tile colspan="1">
+        <a mat-button color="primary" *ngIf="!authenticated()" [routerLink]="['/login']">Login</a>
     </mat-grid-tile>
     <mat-grid-tile colspan="1"></mat-grid-tile>
     <mat-grid-tile colspan="1">

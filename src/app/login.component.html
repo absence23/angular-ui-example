@@ -2,22 +2,49 @@
     There was a problem logging in: "{{error}}". Please try again.
 </div>
 <br>
+<!-- [DOC]
+    Expression [(ngModel)]="credentials.username" allows two way binding for property 'username'
+    of variable 'credentials'.
+
+    Expression #usernameField="ngModel" declares that we can access this form input
+    and its properties via variable usernameField. You can see below how its used for errors checking.
+
+    Attributes 'required', 'pattern', 'minlength' is part of HTML5 validation mechanism.
+    You can learn more here https://developer.mozilla.org/ru/docs/Learn/Forms/Form_validation
+
+    Tags starting with prefix 'mat' (for example: 'mat-form-field') is part of Angular Material UI
+   -->
 <form (submit)="login()" role="form">
     <mat-form-field appearance="fill">
         <mat-label for="username">Username</mat-label>
         <input matInput [(ngModel)]="credentials.username"
-                                                       class="form-control" id="username" name="username"
-                                                       type="text"/>
+               class="form-control" id="username" name="username"
+               type="text" pattern="[\w]+" required #usernameField="ngModel"/>
     </mat-form-field>
+    <br>
+    <div [hidden]="!usernameField.errors?.required || !usernameField.touched" class="danger">
+        Username is required field
+    </div>
+    <div [hidden]="!usernameField.errors?.pattern" class="danger">
+        Username should contain only latin letters, numbers or underscore
+    </div>
     <br>
     <mat-form-field appearance="fill">
         <mat-label for="password">Password</mat-label>
         <input matInput [(ngModel)]="credentials.password"
-                                                       class="form-control" id="password" name="password"
-                                                       type="password"/>
+               class="form-control" id="password" name="password"
+               type="password" pattern="[\w&*%$#!]+" minlength="8" required #passwordField="ngModel"/>
     </mat-form-field>
+    <br>
+    <div [hidden]="!passwordField.errors?.required || !passwordField.touched" class="danger">
+        Password is required field
+    </div>
+    <div [hidden]="!passwordField.errors?.pattern" class="danger">
+        Username should contain only latin letters, numbers or symbols _&*%$#!
+    </div>
+    <div [hidden]="!passwordField.errors?.minlength" class="danger">
+        Username should be at least 8 symbols long
+    </div>
     <br>
     <button mat-raised-button color="primary" type="submit">Submit</button>
 </form>
-
-<!--npm install -g @angular/cli@latest-->

@@ -1,26 +1,28 @@
-# Ui
+#Angular Demo App
+
+This is demo Angular project.
+
+To start it you should make sure that you have next software available:
+* NodeJS, version 14+
+* Npm package manager
+* Angular CLI `@angular/cli:latest`
+
+For starting the server you should first build the project (for example using `npm install`) 
+and then run dev server with command `ng serve`. UI will be available on `http://localhost:4200/`.
+
+# Documentation
+
+You could find all documentation and clarification by searching for tag `[DOC]`
+
+
+
+## Ui
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 

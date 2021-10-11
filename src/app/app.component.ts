@@ -3,6 +3,11 @@ import {AppService} from './app.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
+/**
+ * [DOC]
+ * 'Router' component is used for navigation like attribute 'routerLink' in HTML.
+ * You can specify URL to navigate in method 'navigateByUrl'
+ */
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',

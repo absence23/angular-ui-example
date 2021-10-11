@@ -1,3 +1,22 @@
+<!-- [DOC]
+    Directive *ngFor used for cyclic output of some objects.
+    For example if we have array 'names' that has value ['Kate', 'Pete']
+    than next code will be interpreted this way
+
+        <div *ngFor="let name of names">
+            <p>Name: {{name}}</p>
+        </div>
+
+                ||
+                \/
+
+        <div>
+            <p>Name: Kate</p>
+        </div>
+        <div>
+            <p>Name: Pete</p>
+        </div>
+   -->
 <h1>Greeting</h1>
 <div [hidden]="!error">
     <p class="danger">Error: {{error}}</p>
