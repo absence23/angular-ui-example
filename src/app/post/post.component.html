@@ -1,0 +1,36 @@
+<div [hidden]="!error" class="danger">
+    There was a problem logging in: "{{error}}". Please try again.
+</div>
+<br>
+<form (submit)="addPost()" role="form">
+    <mat-form-field appearance="fill">
+        <mat-label for="title">Title</mat-label>
+        <input matInput [(ngModel)]="post.title"
+               class="form-control" id="title" name="title"
+               type="text" required #titleField="ngModel"/>
+    </mat-form-field>
+    <br>
+    <div [hidden]="!titleField.errors?.required || !titleField.touched" class="danger">
+        Title is required field
+    </div>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label for="text">Text</mat-label>
+        <input matInput [(ngModel)]="post.text"
+               class="form-control" id="text" name="text"
+               type="text" required #textField="ngModel"/>
+    </mat-form-field>
+    <br>
+    <div [hidden]="!textField.errors?.required || !textField.touched" class="danger">
+        Text is required field
+    </div>
+    <br>
+    <label class="mat-raised-button">
+        {{imageName}}
+        <input style="visibility: hidden" type="file" id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+               multiple="multiple" accept="image/*"/>
+    </label>
+    <br>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

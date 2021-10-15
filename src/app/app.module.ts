@@ -13,6 +13,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from './home.component';
 import {LoginComponent} from './login.component';
 import {AppComponent} from './app.component';
+import {PostComponent} from './post/post.component';
 
 /**
  * [DOC]
@@ -32,6 +33,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 /**
@@ -46,24 +49,28 @@ import {MatInputModule} from '@angular/material/input';
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'home', component: HomeComponent},
-    {path: 'login', component: LoginComponent}
+    {path: 'login', component: LoginComponent},
+    {path: 'post', component: PostComponent}
 ];
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        LoginComponent
+        LoginComponent,
+        PostComponent
     ],
     imports: [
-        RouterModule.forRoot(routes),
+        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
         BrowserModule,
         HttpClientModule,
         FormsModule,
         BrowserAnimationsModule,
         MatButtonModule,
         MatGridListModule,
-        MatInputModule
+        MatInputModule,
+        MatToolbarModule,
+        MatIconModule
     ],
     providers: [AppService],
     bootstrap: [AppComponent]

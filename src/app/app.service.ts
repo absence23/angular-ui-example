@@ -73,8 +73,13 @@ export class AppService {
      * @param successCallback - method that is called on success
      * @param failureCallback - method that is called on failure
      */
-    addPost(post: any, successCallback: any, failureCallback: any) {
-        this.sendRequest(`${environment.apiUrl}/api/post`, post, {}, 'post', (response: any) => {
+    addPost(post: any, image: any, successCallback: any, failureCallback: any) {
+        const formData: FormData = new FormData();
+        formData.append('post', new Blob([JSON.stringify(post)], {
+            type: "application/json"
+        }));
+        formData.append('file', image);
+        this.sendRequest(`${environment.apiUrl}/api/post`, formData, {}, 'post', (response: any) => {
             return successCallback && successCallback(response);
         }, (e: any) => {
             return failureCallback && failureCallback(e.error);
