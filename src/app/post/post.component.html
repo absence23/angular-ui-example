@@ -1,5 +1,5 @@
 <div [hidden]="!error" class="danger">
-    There was a problem logging in: "{{error}}". Please try again.
+    {{error}}
 </div>
 <br>
 <form (submit)="addPost()" role="form">
@@ -27,10 +27,11 @@
     <br>
     <label class="mat-raised-button">
         {{imageName}}
-        <input style="visibility: hidden" type="file" id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+        <input class="hidden" type="file" id="uploadFile" (change)="uploadFileEvt($event)"
+               name="uploadFile"
                multiple="multiple" accept="image/*"/>
     </label>
     <br>
     <br>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="titleField.errors?.required && titleField.touched">Submit</button>
 </form>
