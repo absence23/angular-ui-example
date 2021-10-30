@@ -26,6 +26,7 @@
         <img width="30px" [src]="apiUrl + '/api/post/' + post.id + '/image'"/>
         <h3>Title: {{post.title}}</h3>
         <p>Text: {{post.text}}</p>
+        <a mat-button color="primary" [routerLink]="['/post/' + post.id]"><mat-icon>right</mat-icon> Go to post</a>
     </div>
 </div>
 <div [hidden]="authenticated()">

@@ -14,6 +14,7 @@ import {HomeComponent} from './home.component';
 import {LoginComponent} from './login.component';
 import {AppComponent} from './app.component';
 import {PostComponent} from './post/post.component';
+import {ShowPostComponent} from './post/showPost.component';
 
 /**
  * [DOC]
@@ -50,7 +51,8 @@ const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'post', component: PostComponent}
+    {path: 'post', component: PostComponent},
+    {path: 'post/:id', component: ShowPostComponent}
 ];
 
 @NgModule({
@@ -58,7 +60,8 @@ const routes: Routes = [
         AppComponent,
         HomeComponent,
         LoginComponent,
-        PostComponent
+        PostComponent,
+        ShowPostComponent
     ],
     imports: [
         RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),

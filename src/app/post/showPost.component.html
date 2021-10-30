@@ -1,0 +1,7 @@
+<div [hidden]="!error" class="danger">
+    {{error}}
+</div>
+<br>
+<h1>{{post.title}}</h1>
+<img width="100px" [src]="apiUrl + '/api/post/' + post.id + '/image'"/>
+<p>{{post.text}}</p>

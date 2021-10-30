@@ -11,7 +11,7 @@ export class HomeComponent {
     error = '';
     apiUrl = environment.apiUrl;
 
-    constructor(private app: AppService, private http: HttpClient) {
+    constructor(private app: AppService) {
         app.getPosts((data: any) => this.posts = <Array<any>>data,
             (error: any) => this.error = error.message);
     }
