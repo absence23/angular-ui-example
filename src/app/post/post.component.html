@@ -16,9 +16,9 @@
     <br>
     <mat-form-field appearance="fill">
         <mat-label for="text">Text</mat-label>
-        <input matInput [(ngModel)]="post.text"
+        <textarea matInput [(ngModel)]="post.text"
                class="form-control" id="text" name="text"
-               type="text" required #textField="ngModel"/>
+                  type="text" required #textField="ngModel"></textarea>
     </mat-form-field>
     <br>
     <div [hidden]="!textField.errors?.required || !textField.touched" class="danger">

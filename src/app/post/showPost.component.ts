@@ -8,7 +8,7 @@ import {environment} from "../../environments/environment";
     templateUrl: './showPost.component.html'
 })
 export class ShowPostComponent {
-    post = null;
+    post = {text: '', title: '', id: ''};
     error: string = '';
     apiUrl = environment.apiUrl;
 

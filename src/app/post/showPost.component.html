@@ -3,5 +3,5 @@
 </div>
 <br>
 <h1>{{post.title}}</h1>
-<img width="100px" [src]="apiUrl + '/api/post/' + post.id + '/image'"/>
+<img width="100px" *ngIf="post.id" [src]="apiUrl + '/api/post/' + post.id + '/image'"/>
 <p>{{post.text}}</p>
