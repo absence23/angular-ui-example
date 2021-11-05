@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "build:ci": "ng build --prod --sourceMap=false --base-href /angular-ui-example/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/ui/"
+    "deploy": "ng deploy --base-href=/ui/",
+    "heroku-postbuild": "ng build --prod"
   },
   "homepage": "https://absence23.github.io/angular-ui-example",
   "private": true,
@@ -23,6 +24,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "typescript": "4.3.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -41,5 +43,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
+  },
+  "engines": {
+    "node": "14.17.6",
+    "npm": "6.14.15"
   }
 }
