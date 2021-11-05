@@ -61,6 +61,14 @@ export class AppService {
         });
     }
 
+    getCategories(successCallback: any, failureCallback: any) {
+        this.sendRequest(`${environment.apiUrl}/api/category`, {}, {}, 'get', (response: any) => {
+            return successCallback && successCallback(response);
+        }, (e: any) => {
+            return failureCallback && failureCallback(e.error);
+        });
+    }
+
     getPost(id: any, successCallback: any, failureCallback: any) {
         this.sendRequest(`${environment.apiUrl}/api/post/${id}`, {}, {}, 'get', (response: any) => {
             return successCallback && successCallback(response);

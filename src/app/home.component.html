@@ -19,9 +19,23 @@
    -->
 <h1>Greeting</h1>
 <div [hidden]="!authenticated()">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Categories</mat-label>
+            <mat-select [(ngModel)]="selected">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                    {{category.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>You selected category with id {{selected?.id}} and name {{selected?.name}}</p>
+    </div>
     <div [hidden]="!error">
         <p class="danger">Error: {{error}}</p>
     </div>
+    <br>
+    <hr>
+    <br>
     <div *ngFor="let post of posts">
         <img width="30px" [src]="apiUrl + '/api/post/' + post.id + '/image'"/>
         <h3>Title: {{post.title}}</h3>

@@ -15,11 +15,8 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
     constructor(private app: AppService, private http: HttpClient, private router: Router) {
-        this.app.authenticate(undefined, () => {
-            this.router.navigateByUrl('/home');
-        }, () => {
-            this.router.navigateByUrl('/login');
-        });
+        this.app.authenticate(undefined, () => this.router.navigateByUrl('/home'),
+            () => this.router.navigateByUrl('/login'));
     }
 
     logout() {

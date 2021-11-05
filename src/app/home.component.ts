@@ -8,12 +8,15 @@ import {environment} from "../environments/environment";
 })
 export class HomeComponent {
     posts: Array<any> = [];
+    categories: Array<any> = [];
     error = '';
+    selected: any;
     apiUrl = environment.apiUrl;
 
     constructor(private app: AppService) {
         app.getPosts((data: any) => this.posts = <Array<any>>data,
             (error: any) => this.error = error.message);
+        app.getCategories((data: any) => this.categories = data, () => {});
     }
 
     authenticated() {
